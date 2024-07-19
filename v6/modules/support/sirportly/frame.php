@@ -53,7 +53,7 @@
   }
 
   if (mysql_num_rows($client)) {
-    $client = mysql_fetch_array($client, MYSQL_ASSOC);
+    $client = mysql_fetch_array($client, MYSQLI_ASSOC);
     if ($client['userid'])
       $client['id'] = $client['userid'];
 
@@ -62,7 +62,7 @@
   }
 
   ## To access the internal API we still stupidly require an administrators id so let's fetch one.
-  $administrator = mysql_fetch_array( full_query("SELECT `id` FROM `tbladmins` LIMIT 0, 1"), MYSQL_ASSOC );
+  $administrator = mysql_fetch_array( full_query("SELECT `id` FROM `tbladmins` LIMIT 0, 1"), MYSQLI_ASSOC );
 
   ## Client Details
   $results = localAPI('getclientsdetails', array('clientid' => $client['id'], 'stats' => true), $administrator['id']);
