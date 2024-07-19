@@ -53,8 +53,8 @@
   $ca->assign("priorityid", $priotity);
 
   ## Custom fields
-  $sirportlyCustomFields = sirportlyCustomFields($deptid, $customfield);
-  $ca->assign("customfields", $sirportlyCustomFields);
+  //$sirportlyCustomFields = sirportlyCustomFields($deptid, $customfield);
+  //$ca->assign("customfields", $sirportlyCustomFields);
 
   $ca->assign('errormessage', $validate->getHTMLErrorOutput());
   $ca->assign("allowedfiletypes", $CONFIG['TicketAllowedFileTypes']);
